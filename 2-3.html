@@ -1,0 +1,58 @@
+<!doctype html>
+<html>
+  <head>
+    <style>
+      .parent {
+        display: grid;
+        grid-gap: 0.25rem;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        margin: 5rem auto;
+        max-width: 20rem;
+        overflow: hidden;
+        --r: 1rem;
+      }
+
+      .parent div {
+        background: lightblue;
+        height: 4rem;
+        text-align: center;
+        line-height: 4rem;
+        font-size: 1.5rem;
+      }
+
+      .parent div:first-child {
+        border-top-left-radius: var(--r);
+      }
+
+      .parent div:nth-child(4),
+      .parent div:nth-child(-n + 3):last-child {
+        border-top-right-radius: var(--r);
+      }
+
+      .parent div:nth-child(4n + 1):nth-last-child(-n + 4) {
+        border-bottom-left-radius: var(--r);
+      }
+
+      .parent div:last-child,
+      .parent div:nth-child(4n):nth-last-child(-n + 4) {
+        border-bottom-right-radius: var(--r);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="parent">
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+      <div>4</div>
+      <div>5</div>
+      <div>6</div>
+      <div>7</div>
+      <div>8</div>
+      <div>9</div>
+      <div>10</div>
+      <div>11</div>
+      <!-- <div>12</div> -->
+    </div>
+  </body>
+</html>
