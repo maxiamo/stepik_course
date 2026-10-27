@@ -11,7 +11,6 @@ function initNav(nav) {
     link.getAttribute("href"))
   )
 
-  // scroll to the relevant section when clicking on the link in the navigation
   links.forEach((link, index) => {
     link.addEventListener("click", (event) => {
       event.preventDefault()
@@ -26,7 +25,6 @@ function initNav(nav) {
     })
   })
 
-  // highlight an active navigation link
   let lineIndex = -1
   let atBottom = false
   let observer
