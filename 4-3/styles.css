@@ -8,8 +8,7 @@ html, body {
   font-size: 16px;
   color: var(--slate-950);
 }
-/* Задание 2: плавная прокрутка по якорям.
-   scroll-padding-top выставляется в script.js по высоте меню */
+
 html {
   scroll-behavior: smooth;
 }
@@ -66,16 +65,11 @@ a {
   padding: 0 2rem;
   position: relative;
 }
-
-/* Задание 1: sticky на самом .subnav, а не на вложенном nav.
-   Тогда "рамкой" для прилипания служит .container второй секции:
-   меню фиксируется вверху и уезжает вместе с ней, когда начинается третья секция. */
 .subnav {
   position: sticky;
   top: 0;
   z-index: 10;
   padding: 0.5rem 0 1.25rem;
-  /* текст под меню плавно проявляется / затухает */
   background: linear-gradient(to bottom, white 65%, transparent);
 
   nav {
