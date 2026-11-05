@@ -1,0 +1,151 @@
+:root {
+  --slate-50: oklch(98.4% 0.003 247.858);
+  --slate-700: oklch(37.2% 0.044 257.287);
+  --slate-950: oklch(12.9% 0.042 264.695);
+  --sky-200: oklch(90.1% 0.058 230.902);
+  --sky-300: oklch(82.8% 0.111 230.318);
+  --slate-300: oklch(86.9% 0.022 252.894);
+  --slate-500: oklch(55.4% 0.046 257.417);
+}
+html,
+body {
+  font-size: 16px;
+  color: var(--slate-950);
+}
+* {
+  box-sizing: border-box;
+  border: 0 solid;
+  font-family: "Source Sans 3", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-weight: 400;
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+a {
+  color: var(--slate-950);
+  text-decoration: none;
+}
+.prose {
+  h2,
+  h3,
+  h4,
+  p {
+    margin: 1rem 0;
+    &:first-child {
+      margin-top: 0;
+    }
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+.container {
+  max-width: 50rem;
+  margin-inline: auto;
+  padding: 2rem;
+  position: relative;
+}
+
+.section-title {
+  color: var(--slate-500);
+  font-size: 0.875rem;
+  letter-spacing: 0.05em;
+  margin: 2.5rem 0 1rem;
+  text-transform: uppercase;
+  &:first-child {
+    margin-top: 0;
+  }
+}
+
+.divider {
+  --before: 1;
+  --after: 1;
+  --line-color: var(--slate-300);
+  align-items: center;
+  display: flex;
+  margin: 1.5rem 0;
+
+  .line {
+    border-top: 1px solid var(--line-color);
+    min-width: 0;
+    &:first-child {
+      flex: var(--before) 1 0;
+    }
+    &:last-child {
+      flex: var(--after) 1 0;
+    }
+  }
+
+  .content {
+    align-items: center;
+    color: var(--slate-500);
+    display: flex;
+    flex: none;
+    gap: 0.5rem;
+    margin-inline: 1rem;
+    i {
+      font-size: 1.25rem;
+    }
+  }
+
+  .actions {
+    gap: 0.25rem;
+    button {
+      align-items: center;
+      background: var(--slate-50);
+      border-radius: 50%;
+      color: var(--slate-700);
+      cursor: pointer;
+      display: flex;
+      height: 2rem;
+      justify-content: center;
+      width: 2rem;
+      @media (hover: hover) {
+        &:hover {
+          background: var(--sky-300);
+        }
+      }
+    }
+  }
+
+  &.dashed .line {
+    border-top-style: dashed;
+  }
+  &.dotted .line {
+    border-top-style: dotted;
+    border-top-width: 2px;
+  }
+  &.gradient .line {
+    border-top: 0;
+    height: 2px;
+    &:first-child {
+      background: linear-gradient(to right, transparent, var(--line-color));
+    }
+    &:last-child {
+      background: linear-gradient(to right, var(--line-color), transparent);
+    }
+  }
+
+  &.start {
+    --before: 0;
+    .content {
+      margin-left: 0;
+    }
+  }
+  &.quarter {
+    --before: 1;
+    --after: 3;
+  }
+  &.three-quarters {
+    --before: 3;
+    --after: 1;
+  }
+  &.end {
+    --after: 0;
+    .content {
+      margin-right: 0;
+    }
+  }
+}
